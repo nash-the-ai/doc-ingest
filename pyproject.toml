@@ -43,8 +43,8 @@ dev = [
 doc-ingest = "doc_ingest.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/shawnyeager/doc-ingest"
-Repository = "https://github.com/shawnyeager/doc-ingest"
+Homepage = "https://github.com/nash-the-ai/doc-ingest"
+Repository = "https://github.com/nash-the-ai/doc-ingest"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/doc_ingest"]
