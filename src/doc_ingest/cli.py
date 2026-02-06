@@ -70,7 +70,7 @@ def main(
 ):
     """
     Process a directory of documents into a RAG-ready vector store.
-    
+
     \b
     Examples:
         doc-ingest ./documents
@@ -79,34 +79,34 @@ def main(
         doc-ingest ./documents --force --chunk-size 1500
     """
     console.print(f"\n[bold]doc-ingest[/bold] - Document Ingestion Pipeline\n")
-    
+
     # Initialize processor
     processor = DocumentProcessor(
         output_dir=output,
         embedding_model=model,
         chunk_size=chunk_size,
     )
-    
+
     # Process directory
     processor.process_directory(
         directory,
         force=force,
         strategy=strategy,
     )
-    
+
     # Show stats if requested
     if stats:
         processor.print_stats()
-    
+
     # Run query if provided
     if query:
         console.print(f"\n[bold]Query:[/bold] {query}\n")
         results = processor.query(query, n_results=n_results)
-        
+
         if not results['documents'][0]:
             console.print("[yellow]No results found[/yellow]")
             return
-        
+
         for i, (doc, meta, dist) in enumerate(zip(
             results['documents'][0],
             results['metadatas'][0],
