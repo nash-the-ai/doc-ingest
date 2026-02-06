@@ -3,6 +3,7 @@ Command-line interface for doc-ingest.
 """
 
 from typing import Optional
+
 import click
 from rich.console import Console
 
@@ -78,7 +79,7 @@ def main(
         doc-ingest ./documents --query "What is the refund policy?"
         doc-ingest ./documents --force --chunk-size 1500
     """
-    console.print(f"\n[bold]doc-ingest[/bold] - Document Ingestion Pipeline\n")
+    console.print("\n[bold]doc-ingest[/bold] - Document Ingestion Pipeline\n")
 
     # Initialize processor
     processor = DocumentProcessor(
