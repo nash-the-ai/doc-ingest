@@ -4,17 +4,14 @@ Document processing and vector store management.
 
 import hashlib
 from pathlib import Path
-from typing import Optional
 
-from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
-
-from unstructured.partition.auto import partition
-from unstructured.chunking.title import chunk_by_title
-
-from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
+from rich.console import Console
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
+from sentence_transformers import SentenceTransformer
+from unstructured.chunking.title import chunk_by_title
+from unstructured.partition.auto import partition
 
 console = Console()
 
@@ -327,7 +324,7 @@ class DocumentProcessor:
     def print_stats(self):
         """Print statistics to console."""
         stats = self.stats()
-        console.print(f"\n[bold]Vector Store Stats[/bold]")
+        console.print("\n[bold]Vector Store Stats[/bold]")
         console.print(f"  Documents indexed: {stats['documents_indexed']}")
         console.print(f"  Total chunks: {stats['total_chunks']}")
         console.print(f"  Location: {stats['storage_path']}")
