@@ -1,0 +1,10 @@
+# Core dependencies
+unstructured[all-docs]>=0.12.0
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+click>=8.0.0
+rich>=13.0.0
+
+# For development
+# pytest>=7.0.0
+# ruff>=0.1.0
